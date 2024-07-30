@@ -5,9 +5,33 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ProcessoSeletivo {
     public static void main(String[] args) {
         
-        selecaoCandidatos();
+        imprimirSelecionados();
     }
 
+// Criando o método para cumprir com o Case 3:
+    
+    static void imprimirSelecionados() {
+                
+        String [] candidatos = {"Ana Carolina", "Renata", "Eliana", "Elisa", "Isabela"};
+
+        System.out.println("Imprimindo a lista de candidatos informando o índice do elemento: ");
+
+        for(int indice=0; indice < candidatos.length; indice++) {
+            System.out.println("Candidato(a) de numero " + (indice+1) + ": " + candidatos[indice]);
+        }
+
+        System.out.println("========================================================================");
+
+        // Quando não se precisa imprimir o índice, pode-se abreviar unsando o for each: 
+        System.out.println("Uma segunda forma de se usar o for sendo abreviada, usando o FOR EACH:");
+        System.out.println("========================================================================");
+
+        for(String candidato: candidatos) {
+            System.out.println("O candidato selecionado foi: " + candidato);
+        }
+    }
+
+// Criando o método para cumprir com o Case 2:
     static void selecaoCandidatos() {
         Locale.setDefault(Locale.of("pt", "BR")); // Usando o Locale.of() para definir o local para pt-BR
         String [] candidatos = {"Estela", "Ana Carolina", "Renata", "Eliana", "Elisa", "Raquel", "Isabella", "Denise", "Bruna", "Paula", 
@@ -35,6 +59,7 @@ public class ProcessoSeletivo {
         }
     }
 
+    // Método usado para sortear valor pretendido de salário entre 1800 e 2200:
     static double valorPretendido() {
         return ThreadLocalRandom.current().nextDouble(1800, 2200);
     }
