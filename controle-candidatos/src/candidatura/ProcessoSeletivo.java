@@ -1,11 +1,46 @@
 package candidatura;
+
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class ProcessoSeletivo {
     public static void main(String[] args) {
-        
-        imprimirSelecionados();
+
+        Locale.setDefault(Locale.forLanguageTag("pt-BR")); // Define o locale para português BR
+        String [] candidatos = {"Marcio", "Beatriz", "Leandro", "Nadia", "Aline"};
+
+        for(String candidato: candidatos) {
+            entrandoEmContato(candidato);
+        }
+    }
+
+    static void entrandoEmContato(String candidato) {
+        int tentativasRealizadas = 1;
+        boolean continuarTentando = true;
+        boolean atendeu = false;
+
+        do {
+            atendeu = atenderTelefone();
+            continuarTentando = !atendeu;
+
+            if(continuarTentando) {
+                tentativasRealizadas++;
+            } else {
+                System.out.println("Contato realizado com sucesso!");
+            }
+        } while(continuarTentando && tentativasRealizadas < 3);
+
+        if(atendeu) {
+            System.out.println("Conseguimos contato com: " + candidato + " na " + tentativasRealizadas + "a. tentativa.");
+            } else {
+                System.out.println("Não conseguimos contato com " + candidato + ", número máximo de: " + tentativasRealizadas + " tentativas realizadas.");
+            }
+    }
+
+    // Método auxiliar para o case 4 onde se simula através de uma expressão randômica (sorteio), uma chamada de lugação telefônica:
+    static boolean atenderTelefone() {
+        return new Random().nextInt(3)==1; // ==1 significa que atenderam ao telefone
     }
 
 // Criando o método para cumprir com o Case 3:
