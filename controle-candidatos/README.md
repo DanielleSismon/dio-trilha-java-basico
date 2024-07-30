@@ -1,18 +1,26 @@
-## Getting Started
+Detalhes do presente projeto chamado Processo Seletivo:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+<a> https://glysns.gitbook.io/java-basico/controle-de-fluxo/cases </a>
+_________________________________________________________________________________________________________________
 
-## Folder Structure
+" Cases
 
-The workspace contains two folders by default, where:
+Vamos explorar alguns outros cenários, com fluxo condicionais, repetições e excepcionais.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Case 1: Vamos imaginar que em um processo seletivo, existe o valor base salarial de R$ 2.000,00 e o salário pretentido pelo candidato. Vamos elaborar um controle de fluxo onde:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Se o valor salário base, for maior que valor salário pretentido, imprima : LIGAR PARA O CANDIDATO;
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Senão, Se o valor salário base for igual ao valor salário pretentido, imprima : LIGAR PARA O CANDIDATO, COM CONTRA PROPOSTA;
 
-## Dependency Management
+Senão imprima: AGUARDANDO RESULTADO DOS DEMAIS CANDIDATOS.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Case 2: Foi solicitado, que nosso sistema garanta que, diante das inúmeras candidaturas sejam selecionados apenas no máximo, 5 candidatos para entrevista, onde o salário pretendido seja menor ou igual ao salário base.
+
+Case 3: Agora é hora de imprimir a lista dos candidatos selecionados, para disponibilizar para o RH entrar em contato.
+
+Case 4: O RH deverá realizar uma ligação, com no máximo 03 tentativas para cada candidato selecionado e caso o candidato atenda, deve-se imprimir:
+
+=> "CONSEGUIMOS CONTATO COM [CANDIDATO] após [TENTATIVA] tentativas";
+=> Do contrário, deverá imprimir: "Não conseguimos contato com o [CANDIDATO]."
+ 
